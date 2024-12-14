@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine Deviation Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .alert {
+            background-color: #f44336;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .deviation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .deviation-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Routine Deviation Alerts</h1>
+    <div id="alerts"></div>
+
+    <button id="checkDeviationsBtn">Check Deviations</button>
+
+    <script>
+        document.getElementById('checkDeviationsBtn').addEventListener('click', () => {
+            // Fetch the deviations from the Python-generated JSON
+            fetch('deviations.json')
+                .then(response => response.json())
+                .then(data => {
+                    const alertsContainer = document.getElementById('alerts');
+                    alertsContainer.innerHTML = ''; // Clear previous alerts
+
+                    if (data.deviations.length === 0) {
+                        alertsContainer.innerHTML = '<div>No deviations detected.</div>';
+                    } else {
+                        const ul = document.createElement('ul');
+                        ul.classList.add('deviation-list');
+
+                        data.deviations.forEach(deviation => {
+                            const li = document.createElement('li');
+                            li.classList.add('alert');
+                            li.textContent = deviation;
+                            ul.appendChild(li);
+                        });
+
+                        alertsContainer.appendChild(ul);
+                    }
+                })
+                .catch(error => console.error('Error fetching deviations:', error));
+        });
+    </script>
+</body>
+</html>

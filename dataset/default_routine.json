@@ -1,0 +1,186 @@
+[
+    {
+        "start_time": "06:00 AM",
+        "tasks": ["Wake up and make the bed"]
+    },
+    {
+        "start_time": "06:01 AM",
+        "tasks": ["Drink a glass of water"]
+    },
+    {
+        "start_time": "06:02 AM",
+        "tasks": ["Stretching exercises"]
+    },
+    {
+        "start_time": "06:03 AM",
+        "tasks": ["Wash face and brush teeth"]
+    },
+    {
+        "start_time": "06:04 AM",
+        "tasks": ["Go to the bathroom"]
+    },
+    {
+        "start_time": "06:05 AM",
+        "tasks": ["Wash hands and face"]
+    },
+    {
+        "start_time": "06:06 AM",
+        "tasks": ["Take morning medication (if any)"]
+    },
+    {
+        "start_time": "06:10 AM",
+        "tasks": ["Prepare for morning walk"]
+    },
+    {
+        "start_time": "06:15 AM",
+        "tasks": ["Go for a walk around the house or in the garden"]
+    },
+    {
+        "start_time": "06:30 AM",
+        "tasks": ["Return from walk and rest for a while"]
+    },
+    {
+        "start_time": "06:45 AM",
+        "tasks": ["Prepare and have breakfast"]
+    },
+    {
+        "start_time": "07:00 AM",
+        "tasks": ["Eat breakfast (light and nutritious)"]
+    },
+    {
+        "start_time": "07:15 AM",
+        "tasks": ["Wash hands and clean up after breakfast"]
+    },
+    {
+        "start_time": "07:30 AM",
+        "tasks": ["Sit and relax for a while"]
+    },
+    {
+        "start_time": "08:00 AM",
+        "tasks": ["Read the newspaper or watch TV"]
+    },
+    {
+        "start_time": "08:30 AM",
+        "tasks": ["Engage in a hobby or creative activity (e.g., drawing, knitting)"]
+    },
+    {
+        "start_time": "09:00 AM",
+        "tasks": ["Short nap or rest"]
+    },
+    {
+        "start_time": "09:30 AM",
+        "tasks": ["Wake up from nap and freshen up"]
+    },
+    {
+        "start_time": "10:00 AM",
+        "tasks": ["Prepare for mid-morning snack"]
+    },
+    {
+        "start_time": "10:15 AM",
+        "tasks": ["Have a light snack (fruit or nuts)"]
+    },
+    {
+        "start_time": "10:30 AM",
+        "tasks": ["Take a walk around the house or in the garden"]
+    },
+    {
+        "start_time": "11:00 AM",
+        "tasks": ["Engage in a simple puzzle or memory game"]
+    },
+    {
+        "start_time": "11:30 AM",
+        "tasks": ["Rest and relax"]
+    },
+    {
+        "start_time": "12:00 PM",
+        "tasks": ["Prepare for lunch"]
+    },
+    {
+        "start_time": "12:15 PM",
+        "tasks": ["Eat lunch (balanced meal)"]
+    },
+    {
+        "start_time": "12:45 PM",
+        "tasks": ["Wash hands and clean up after lunch"]
+    },
+    {
+        "start_time": "01:00 PM",
+        "tasks": ["Take a short rest or nap"]
+    },
+    {
+        "start_time": "01:30 PM",
+        "tasks": ["Wake up from nap and freshen up"]
+    },
+    {
+        "start_time": "02:00 PM",
+        "tasks": ["Watch TV or listen to soothing music"]
+    },
+    {
+        "start_time": "02:30 PM",
+        "tasks": ["Take a walk around the house"]
+    },
+    {
+        "start_time": "03:00 PM",
+        "tasks": ["Engage in a hobby or craft activity"]
+    },
+    {
+        "start_time": "03:30 PM",
+        "tasks": ["Rest and relax"]
+    },
+    {
+        "start_time": "04:00 PM",
+        "tasks": ["Prepare for evening snack"]
+    },
+    {
+        "start_time": "04:15 PM",
+        "tasks": ["Have evening snack (fruit or light snack)"]
+    },
+    {
+        "start_time": "04:30 PM",
+        "tasks": ["Engage in light physical activity (stretching or gentle exercise)"]
+    },
+    {
+        "start_time": "05:00 PM",
+        "tasks": ["Rest and relax"]
+    },
+    {
+        "start_time": "05:30 PM",
+        "tasks": ["Prepare for dinner"]
+    },
+    {
+        "start_time": "06:00 PM",
+        "tasks": ["Eat dinner (light meal with vegetables, rice, and protein)"]
+    },
+    {
+        "start_time": "06:30 PM",
+        "tasks": ["Wash hands and clean up after dinner"]
+    },
+    {
+        "start_time": "07:00 PM",
+        "tasks": ["Watch TV or listen to relaxing music"]
+    },
+    {
+        "start_time": "07:30 PM",
+        "tasks": ["Talk with family or engage in social activity"]
+    },
+    {
+        "start_time": "08:00 PM",
+        "tasks": ["Relax with a book or magazine"]
+    },
+    {
+        "start_time": "08:30 PM",
+        "tasks": ["Brush teeth and prepare for bed"]
+    },
+    {
+        "start_time": "09:00 PM",
+        "tasks": ["Take night medication (if any)"]
+    },
+    {
+        "start_time": "09:15 PM",
+        "tasks": ["Sleep and rest"]
+    },
+    {
+        "start_time": "12:00 AM",
+        "tasks": ["Sleep (throughout the night)"]
+    }
+]

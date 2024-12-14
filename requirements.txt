@@ -1,0 +1,6 @@
+nltk
+scikit-learn
+numpy
+pandas
+smtplib
+Flask==2.3.2
