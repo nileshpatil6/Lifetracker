@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receiver</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .message {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .sender {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Receiver</h1>
+    <div id="messagesContainer"></div>
+
+    <script>
+        // Initialize Supabase
+        const supabaseUrl = 'https://zaxaldaccvlrosibwjnl.supabase.co';
+
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpheGFsZGFjY3Zscm9zaWJ3am5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQxNDkzMDEsImV4cCI6MjA0OTcyNTMwMX0.e2tDXqTTXfsnQH_jCF_1wVVc527VyBGRQh2ppJ7hgWY';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        const messagesContainer = document.getElementById('messagesContainer');
+
+        // Function to load messages
+        async function loadMessages() {
+            const { data: messages, error } = await supabase
+                .from('messages')
+                .select('*')
+                .order('created_at', { ascending: true });
+
+            if (error) {
+                console.error('Error loading messages:', error);
+                return;
+            }
+
+            // Display messages
+            messagesContainer.innerHTML = '';
+            messages.forEach(({ sender, message, created_at }) => {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.innerHTML = `
+                    <div class="sender">${sender}:</div>
+                    <div>${message}</div>
+                    <small>${new Date(created_at).toLocaleString()}</small>
+                `;
+                messagesContainer.appendChild(messageDiv);
+            });
+        }
+
+        // Subscribe to new messages in real-time
+        supabase
+            .channel('realtime-messages')
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'messages' }, (payload) => {
+                const { new: { sender, message, created_at } } = payload;
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.innerHTML = `
+                    <div class="sender">${sender}:</div>
+                    <div>${message}</div>
+                    <small>${new Date(created_at).toLocaleString()}</small>
+                `;
+                messagesContainer.appendChild(messageDiv);
+            })
+            .subscribe();
+
+        // Load messages on page load
+        loadMessages();
+    </script>
+</body>
+</html>

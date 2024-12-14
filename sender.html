@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sender</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sender</h1>
+    <input type="text" id="senderName" placeholder="Enter your name" />
+    <textarea id="messageInput" rows="5" placeholder="Enter your message"></textarea>
+    <button onclick="sendMessage()">Send Message</button>
+
+    <script>
+        // Initialize Supabase
+        const supabaseUrl = 'https://zaxaldaccvlrosibwjnl.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpheGFsZGFjY3Zscm9zaWJ3am5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQxNDkzMDEsImV4cCI6MjA0OTcyNTMwMX0.e2tDXqTTXfsnQH_jCF_1wVVc527VyBGRQh2ppJ7hgWY';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        // Function to send a message
+        async function sendMessage() {
+            const sender = document.getElementById('senderName').value.trim();
+            const message = document.getElementById('messageInput').value.trim();
+
+            if (!sender || !message) {
+                alert('Both name and message are required!');
+                return;
+            }
+
+            const { data, error } = await supabase
+                .from('messages')
+                .insert([{ sender, message }]);
+
+            if (error) {
+                console.error('Error sending message:', error);
+                alert('Failed to send message.');
+            } else {
+                alert('Message sent successfully!');
+                document.getElementById('messageInput').value = ''; // Clear the input
+            }
+        }
+    </script>
+</body>
+</html>
